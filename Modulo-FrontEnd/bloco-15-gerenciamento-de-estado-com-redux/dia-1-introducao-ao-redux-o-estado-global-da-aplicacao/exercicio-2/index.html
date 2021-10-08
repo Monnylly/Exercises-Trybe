@@ -91,7 +91,7 @@ import { combineReducers } from 'redux';
         document.getElementById('nome-2').innerHTML = meuSegundoReducer.nome;
         document.getElementById('sobrenome-2').innerHTML = meuSegundoReducer.sobrenome;
       });
-      
+
       // 1 - Combine os reducers existentes com a função combineReducers e salve-o em uma constante
       const rootReducer = combineReducer({meuPrimeiroReducer, meuSegundoReducer});
       export default rootReducer;
@@ -101,3 +101,4 @@ import { combineReducers } from 'redux';
     </script>
   </body>
 </html>
+
