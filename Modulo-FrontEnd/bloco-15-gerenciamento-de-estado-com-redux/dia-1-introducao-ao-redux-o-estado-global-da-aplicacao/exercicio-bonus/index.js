@@ -210,7 +210,7 @@ const immutableReducer = (state = ['Do not mutate state!'], action) => {
        return state;
    }
 };
-
+// duvida nesta funçao e como o reducer acessa o paramentro desta funcao ja q ela esta fora do escopo
 const addTodo = (todo) => ({ 
   type: ADD_TO_DO,
   todo});
@@ -227,9 +227,35 @@ const addTodo = (todo) => ({
         return state;
     }
   }
+  //duvida desta funcao e como o reducer esta removendo itens do array
   const removeItem = (index) => ({
     type: 'REMOVE_ITEM',
     index});
   
   const store = Redux.createStore(immutableReducer);
 
+  // 13 trabalhando com objetos assing avaliar resolução tirada do gabarito
+
+  const ONLINE = 'ONLINE';
+  const defaultState = {
+    user: 'CamperBot',
+    status: 'offline',
+    friends: '732,982',
+    community: 'freeCodeCamp',
+  };
+  
+  const immutableReducer = (state = defaultState, action) => {
+    switch(action.type) {
+      case ONLINE:
+        return Object.assign({}, state, {
+          status: 'online'
+        });
+      default:
+        return state;
+    }
+  };
+  
+  const wakeUp = () => ({
+    type: ONLINE});
+  
+  const store = Redux.createStore(immutableReducer);
