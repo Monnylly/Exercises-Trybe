@@ -31,13 +31,15 @@
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <!-- //requisito 6 cria botao Random -->
+      <button id="random">Randon color</button> 
     </div>
     <script>
       const ESTADO_INICIAL = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
-
+// ainda requisito 6 a funçao criaCor arredonda o numero random e multiplica pelo tamanho do array depois tem um for q retorna determinada cor q esta no array de cores
       function criarCor() {
       const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
       let cor = '#';
@@ -47,6 +49,7 @@
       }
       return cor;
     }
+
       // 2 - Crie um reducer, implementando um switch retornando apenas o estado inicial como default . Não se esqueça de colocar o reducer como parâmetro para o createStore , feito na etapa anterior.
       // 3 -Incremente o switch criado no exercício anterior com as actions NEXT_COLOR e PREVIOUS_COLOR . Essas actions devem alterar o valor index guardado no ESTADO_INICIAL . Atente-se aos limites de tamanho do array, as posições devem iniciar em 0 e não podem exceder a numeração do último item do array.
       function colorReducer(state= ESTADO_INICIAL , action) {
@@ -92,7 +95,7 @@
           document.getElementById('value').innerHTML = colors[index];
           document.getElementById('container').style.backgroundColor = colors[index];
         });
-        //Crie um botão com o texto Random color , um eventListener e uma action no reducer adicionando uma cor aleatória ao array colors guardado em nosso estado inicial. Faça também com que essa cor seja mostrada ao ser criada, alterando o estado index para a posição dela. Para facilitar, segue uma função que gera cores aleatórias:
+        //6Crie um botão com o texto Random color , um eventListener e uma action no reducer adicionando uma cor aleatória ao array colors guardado em nosso estado inicial. Faça também com que essa cor seja mostrada ao ser criada, alterando o estado index para a posição dela. Para facilitar, segue uma função que gera cores aleatórias:
 
       // 1- cria store 
       const store = Redux.createStore(colorReducer);
