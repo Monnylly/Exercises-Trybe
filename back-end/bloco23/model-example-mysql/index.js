@@ -8,10 +8,10 @@ const Author = require('./models/Author');
 app.get('/authors', async (req, res) => {
   const authors = await Author.getAll();
 
-  res.status(200).json(authors);
+  return res.status(200).json(authors);
 })
 
-app.listen(port, () => console.log('Example app listerning on port port!'))
+app.listen(port, () => console.log('Example app listerning on port port!'));
 
 
 
