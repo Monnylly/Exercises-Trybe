@@ -7,12 +7,25 @@ def maior(n1, n2):
     return n1
 
 
+test = maior(2, 5)
+
+print(test)
+
+
 # Exercício 2: Calcule a média aritmética dos valores contidos em uma lista.
+
+
 def media(num):
     total = 0
     for number in num:
         total += number
     return total / len(num)
+
+
+resultado = media(3)
+
+
+print(int(resultado))
 
 
 #  Python sabe multiplicar sequências! Por exemplo, 3 * 'bla'
@@ -28,6 +41,10 @@ def asteriscos(n):
     for row in range(n):
         print(n * "*")
 
+
+result_ast = asteriscos(5)
+
+print(int(result_ast))
 
 # Crie uma função que receba uma lista de
 # nomes e retorne o nome com a maior quantidade de caracteres
